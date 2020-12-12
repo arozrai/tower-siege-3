@@ -12,6 +12,8 @@ var BOX1
 var bOx1,bOx2,box3
 var boX1
 
+var backgroundImg
+
 var score=0
 
 function setup() {
@@ -53,8 +55,12 @@ function setup() {
 
 function draw() {
   //camera.zoom=camera.zoom+1
-  background(125);  
-  
+  if (backgroundImg=day){
+    background("cyan");  
+  } else{
+    background("black")
+  }
+
   stand1.display()
   stand2.display()
   ground.display()
@@ -123,3 +129,16 @@ if(keyCode === 32)
     sling1.attach(poll.body)
   }
 } 
+
+async function catchTime(){
+  var responxe = await fetch("https://worldtimeapi.org/api/timezone/Europe/London")
+  var vh = await responxe.json()
+  var ZTime = vh.datetime
+  var Hours = ZTime.slice(11,13)
+  if(Hours>=06 && Hours<=18){
+    backgroundImg=day
+  }
+  else{
+    backgroundImg=night
+  }
+}
