@@ -55,7 +55,7 @@ function setup() {
 
 function draw() {
   //camera.zoom=camera.zoom+1
-  if (backgroundImg=day){
+  if (backgroundImg==="day"){
     background("cyan");  
   } else{
     background("black")
@@ -136,9 +136,9 @@ async function catchTime(){
   var ZTime = vh.datetime
   var Hours = ZTime.slice(11,13)
   if(Hours>=06 && Hours<=18){
-    backgroundImg=day
+    backgroundImg="day"
   }
   else{
-    backgroundImg=night
+    backgroundImg="night"
   }
 }
