@@ -22,6 +22,8 @@ function setup() {
   world=engine.world
   stroke(255)
 
+  catchTime()
+
   stand1=new STANd(400,350,150,20)
   stand2=new STANd(600,300,60,20)
   ground=new STANd(400,480,800,20)
